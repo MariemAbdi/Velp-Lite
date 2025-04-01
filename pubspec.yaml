@@ -1,0 +1,40 @@
+name: velp_lite
+description: "Homework Assignment: Velp Pet Manager Lite"
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.6.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  google_fonts: ^6.2.1
+  flutter_riverpod: ^2.6.1
+  intl: ^0.20.2
+  sqflite: 2.4.1
+  path: 1.9.0
+  flutter_native_splash: 2.4.4
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+  flutter_launcher_icons: "^0.14.3"
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/logo.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  adaptive_icon_background: "#ffffff"
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
+    - assets/images/
