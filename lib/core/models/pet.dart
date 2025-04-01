@@ -24,7 +24,7 @@ enum PetColor {
   white('White'),
   brown('Brown'),
   gray('Gray'),
-  golden('Golden'),
+  golden('Gold'),
   spotted('Spotted'),
   mixed('Mixed');
 

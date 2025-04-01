@@ -26,7 +26,7 @@ class ChatScreen extends ConsumerWidget {
           ? Center(child: CircularProgressIndicator())
           : chatState.error != null
               ? Center(child: Text(chatState.error!))
-              : Padding(
+              : SingleChildScrollView(
                   padding: const EdgeInsets.only(top: 20),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

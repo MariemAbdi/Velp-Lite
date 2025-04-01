@@ -47,7 +47,7 @@ class AppTheme {
           surfaceTintColor: Colors.transparent,
           dayStyle: GoogleFonts.poppins(
               fontSize: 14, fontWeight: FontWeight.w400, color: black),
-          yearStyle: GoogleFonts.poppins(),
+          yearStyle: GoogleFonts.poppins(fontWeight: FontWeight.normal),
           headerHeadlineStyle: GoogleFonts.poppins(color: gray, fontSize: 20),
           headerHelpStyle: GoogleFonts.poppins(color: black, fontSize: 16),
           todayBackgroundColor: WidgetStateProperty.resolveWith((states) {
