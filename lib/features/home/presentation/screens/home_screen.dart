@@ -29,31 +29,33 @@ class HomeScreen extends ConsumerWidget {
       ),
       body: petState.isLoading
           ? const Center(child: CircularProgressIndicator())
-          : Padding(
-              padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                spacing: 20,
-                children: [
-                  const GreetingsSection(),
-                  petState.pets.isEmpty
-                      ? Expanded(
-                          child: EmptyList(
-                            title: 'No pets added yet',
-                            message: 'Tap + to add your first pet',
-                            icon: Icons.pets,
-                          ),
-                        )
-                      : Expanded(
-                          child: AppListview(
-                              itemCount: petState.pets.length,
-                              itemBuilder: (context, index) {
-                                return PetCard(pet: petState.pets[index]);
-                              }),
-                        )
-                ],
-              ),
-            ),
+          : petState.error != null
+              ? Center(child: Text(petState.error!))
+              : Padding(
+                  padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    spacing: 20,
+                    children: [
+                      const GreetingsSection(),
+                      petState.pets.isEmpty
+                          ? Expanded(
+                              child: EmptyList(
+                                title: 'No pets added yet',
+                                message: 'Tap + to add your first pet',
+                                icon: Icons.pets,
+                              ),
+                            )
+                          : Expanded(
+                              child: AppListview(
+                                  itemCount: petState.pets.length,
+                                  itemBuilder: (context, index) {
+                                    return PetCard(pet: petState.pets[index]);
+                                  }),
+                            )
+                    ],
+                  ),
+                ),
       floatingActionButton: FloatingActionButton(
         onPressed: goToAddPetScreen,
         child: const Icon(Icons.add),

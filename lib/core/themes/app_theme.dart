@@ -5,7 +5,7 @@ class AppTheme {
   static final Color primaryColor = Color(0xFF70A9A1);
   static final Color secondaryColor = Color(0xFFDDB771);
   static final Color accentColor = Color(0xFFE07A5F);
-  //
+
   static final Color black = Color(0xFF000000);
   static final Color white = Color(0xFFffffff);
   static final Color gray = Color(0xFF888888);

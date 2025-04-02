@@ -26,7 +26,7 @@ class ChatScreen extends ConsumerWidget {
           ? Center(child: CircularProgressIndicator())
           : chatState.error != null
               ? Center(child: Text(chatState.error!))
-              : SingleChildScrollView(
+              : Padding(
                   padding: const EdgeInsets.only(top: 20),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -40,12 +40,14 @@ class ChatScreen extends ConsumerWidget {
                                 message: "Start a conversation now!",
                               ),
                             )
-                          : AppListview(
-                              padding: const EdgeInsets.all(20),
-                              itemCount: chats.length,
-                              itemBuilder: (context, index) {
-                                return ChatTile(chat: chats[index]);
-                              },
+                          : Expanded(
+                              child: AppListview(
+                                padding: const EdgeInsets.all(20),
+                                itemCount: chats.length,
+                                itemBuilder: (context, index) {
+                                  return ChatTile(chat: chats[index]);
+                                },
+                              ),
                             ),
                     ],
                   ),
